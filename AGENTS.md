@@ -102,6 +102,14 @@ All detailed requirements live in `openspec/changes/customer-idea-management-sys
 - Extract shared logic into reusable functions/hooks/components
 - BUT: duplication is cheaper than the wrong abstraction — don't abstract too early
 
+### Use What You Have
+
+- **Always check existing libraries first** before writing custom code. The specs and design document list the libraries in use — use their built-in features.
+- If a library offers the functionality you need, use it. Don't reinvent.
+- If you can't find existing functionality, **ask before implementing**. Don't assume — confirm with the user first.
+- If you must evaluate a new solution, research the best available option and present it with trade-offs before proceeding.
+- Never implement a custom solution when a library feature exists, and never add a new dependency without asking.
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -178,6 +186,8 @@ refactor(email): extract sending logic into service layer
 - Run the verification sequence after every change
 - Ask for clarification if requirements are unclear
 - Document complex logic with comments explaining "why" not "what"
+- **Use existing library features** before writing custom code — check docs first
+- **Ask before adding new dependencies** or implementing custom solutions
 
 ### Don't
 - Add features not in the spec without asking
@@ -187,12 +197,15 @@ refactor(email): extract sending logic into service layer
 - Bypass guardrails (linters, type checkers, pre-commit hooks)
 - Over-abstract or add unnecessary design patterns
 - Optimize prematurely without measuring
+- **Reinvent functionality** that already exists in the chosen libraries
+- **Add new dependencies** without confirming with the user first
 
 ### When Stuck
 1. Read the relevant spec (`openspec/changes/.../specs/<capability>/spec.md`)
 2. Check `design.md` for architectural decisions
 3. Look at existing code for patterns and conventions
-4. Ask for help rather than guessing
+4. **Search the library docs** for existing functionality before writing custom code
+5. Ask for help rather than guessing — present options with trade-offs
 
 ## Running the Project
 
