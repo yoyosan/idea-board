@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaBoard — Mockups</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .link-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-subtle);
+        }
+        .link-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .link-card-desc {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .link-card-icon {
+            font-size: 1.25rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            margin-left: 0.5rem;
+        }
+        .badge-customer {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .badge-admin {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="hero">
+            <div class="hero-icon">💡</div>
+            <h1>IdeaBoard Mockups</h1>
+            <p>Interactive HTML mockups for the customer feature request portal. Click through to explore the user experience before implementation begins.</p>
+        </div>
+
+        <div class="section-title">Customer Portal</div>
+        <div class="link-grid">
+            <a href="login.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">🔑</span> Login</div>
+                <div class="link-card-desc">Email/password login form with forgot password link</div>
+            </a>
+            <a href="register.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">👤</span> Register</div>
+                <div class="link-card-desc">New account signup with email verification</div>
+            </a>
+            <a href="submit.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">✏️</span> Submit Idea</div>
+                <div class="link-card-desc">Idea submission form with duplicate detection</div>
+            </a>
+            <a href="ideas.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">📋</span> Browse Ideas</div>
+                <div class="link-card-desc">Public ideas list with voting, search, and filters</div>
+            </a>
+            <a href="idea-detail.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">💬</span> Idea Detail</div>
+                <div class="link-card-desc">Full idea view with status, comments, and voting</div>
+            </a>
+            <a href="my-ideas.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">⭐</span> My Ideas</div>
+                <div class="link-card-desc">Customer's submitted and voted ideas</div>
+            </a>
+        </div>
+
+        <div class="section-title">Admin Dashboard</div>
+        <div class="link-grid">
+            <a href="dashboard.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">📊</span> Dashboard</div>
+                <div class="link-card-desc">Admin idea management with filters, search, and status overview</div>
+            </a>
+            <a href="admin-detail.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">⚙️</span> Admin Detail</div>
+                <div class="link-card-desc">Status updates, internal notes, voter list, and merge</div>
+            </a>
+            <a href="forgot-password.html" class="link-card">
+                <div class="link-card-title"><span class="link-card-icon">🔒</span> Forgot Password</div>
+                <div class="link-card-desc">Password reset request flow</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>IdeaBoard — Customer feature request portal</p>
+            <p><a href="https://github.com/yoyosan/idea-board">GitHub Repository</a> · <a href="https://github.com/yoyosan/idea-board/blob/main/AGENTS.md">AGENTS.md</a></p>
+        </div>
+    </main>
+</body>
+</html>

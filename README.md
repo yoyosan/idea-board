@@ -50,20 +50,18 @@ Two roles: `customer` (submit, vote, comment) and `admin` (dashboard, status upd
 
 ## Live Mockups
 
-Interactive HTML mockups are deployed via GitHub Pages:
+Interactive HTML mockups deployed via GitHub Pages:
 
 | Page | Description |
 |------|-------------|
-| [Login](https://yourusername.github.io/idea-board/mockups/login.html) | Email/password login |
-| [Register](https://yourusername.github.io/idea-board/mockups/register.html) | New account signup |
-| [Submit Idea](https://yourusername.github.io/idea-board/mockups/submit.html) | Idea submission form |
-| [Browse Ideas](https://yourusername.github.io/idea-board/mockups/ideas.html) | Public ideas list with voting |
-| [Idea Detail](https://yourusername.github.io/idea-board/mockups/idea-detail.html) | Full idea view with comments |
-| [My Ideas](https://yourusername.github.io/idea-board/mockups/my-ideas.html) | Customer's submitted/voted ideas |
-| [Admin Dashboard](https://yourusername.github.io/idea-board/mockups/dashboard.html) | Admin idea management |
-| [Admin Detail](https://yourusername.github.io/idea-board/mockups/admin-detail.html) | Status update, internal notes |
-
-> Replace `yourusername` with your GitHub username after enabling Pages.
+| [Login](https://yoyosan.github.io/idea-board/mockups/login.html) | Email/password login |
+| [Register](https://yoyosan.github.io/idea-board/mockups/register.html) | New account signup |
+| [Submit Idea](https://yoyosan.github.io/idea-board/mockups/submit.html) | Idea submission form |
+| [Browse Ideas](https://yoyosan.github.io/idea-board/mockups/ideas.html) | Public ideas list with voting |
+| [Idea Detail](https://yoyosan.github.io/idea-board/mockups/idea-detail.html) | Full idea view with comments |
+| [My Ideas](https://yoyosan.github.io/idea-board/mockups/my-ideas.html) | Customer's submitted/voted ideas |
+| [Admin Dashboard](https://yoyosan.github.io/idea-board/mockups/dashboard.html) | Admin idea management |
+| [Admin Detail](https://yoyosan.github.io/idea-board/mockups/admin-detail.html) | Status update, internal notes |
 
 ## Key Documentation
 
