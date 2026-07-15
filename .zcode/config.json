@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "enabled": true,
+    "events": {
+      "PostToolUse": [
+        {
+          "matcher": "Edit|Write",
+          "hooks": [
+            {
+              "type": "process",
+              "command": "bash",
+              "args": [
+                "${ZCODE_PROJECT_DIR}/.zcode/verify.sh"
+              ],
+              "timeout": 120,
+              "statusMessage": "Running verification: lint → typecheck → test"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

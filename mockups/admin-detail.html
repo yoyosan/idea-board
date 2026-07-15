@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaBoard Admin — Dark mode support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .idea-title-large {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+        .idea-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-update-panel {
+            background: var(--primary-light);
+            border: 1px solid var(--primary-subtle);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .status-update-panel h3 {
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        .form-row { margin-bottom: 1rem; }
+
+        .description {
+            color: var(--text);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+        }
+
+        .section { margin-bottom: 1.75rem; }
+        .section-title {
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .votes-list {
+            background: var(--border-light);
+            border: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .votes-count { color: var(--text); font-weight: 700; }
+
+        .comment-form-box {
+            margin-top: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: var(--radius);
+        }
+        .internal-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+        .internal-toggle input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 640px) {
+            .form-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="dashboard.html" class="logo">
+                <span class="logo-icon">💡</span>
+                <span class="logo-text">Idea<span>Board</span></span>
+                <span style="background: var(--primary-light); color: var(--primary); padding: 0.125rem 0.5rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 700; margin-left: 0.25rem;">ADMIN</span>
+            </a>
+            <a href="#" class="back-link" style="margin: 0;">Logout</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="dashboard.html" class="back-link">← Back to dashboard</a>
+
+        <div class="card">
+            <h1 class="idea-title-large">Dark mode support</h1>
+            <div class="idea-subtitle">
+                <span class="category-badge">Feature Request</span>
+                <span>·</span>
+                <span>by j***@***.com</span>
+                <span>·</span>
+                <span>2 days ago</span>
+                <span>·</span>
+                <span>47 votes</span>
+            </div>
+
+            <div class="status-update-panel">
+                <h3>📝 Update Status</h3>
+                <div class="form-row">
+                    <div class="form-group" style="margin: 0;">
+                        <label style="margin-bottom: 0.375rem;">New Status</label>
+                        <select>
+                            <option>Submitted</option>
+                            <option selected>Under Review</option>
+                            <option>Planned</option>
+                            <option>In Progress</option>
+                            <option>Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin: 0;">
+                        <label style="margin-bottom: 0.375rem;">Note for Customer <span style="color: var(--text-muted); font-weight: 400;">(optional)</span></label>
+                        <input type="text" placeholder="e.g. Great idea! We're evaluating this now.">
+                    </div>
+                </div>
+                <button class="btn btn-sm">Update Status & Notify Customer</button>
+            </div>
+
+            <div class="section">
+                <div class="section-title">📝 Description</div>
+                <div class="description">
+                    I'd love to see a dark mode option for the app. It's easier on the eyes at night and looks more modern. Many users have been requesting this feature, and it would improve accessibility too.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🗳️ Votes (47)</div>
+                <div class="votes-list">
+                    <span class="votes-count">47 people</span> have voted for this idea:
+                    j***@***.com, m***@***.com, k***@***.com, r***@***.com, t***@***.com, +42 more
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🕒 Status History</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-status">Submitted</div>
+                        <div class="timeline-date">Jul 10, 2026 · by system</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-status">Under Review</div>
+                        <div class="timeline-date">Jul 12, 2026 · by a***@***.com</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">💬 Comments (3)</div>
+
+                <div class="comment public">
+                    <div class="comment-meta">
+                        <span class="comment-author">s***@***.com</span>
+                        <span class="role role-customer">Customer</span>
+                        <span class="comment-time">· 2 days ago</span>
+                    </div>
+                    <div class="comment-text">Please also consider OLED black, not just dark gray. True black looks amazing on OLED screens.</div>
+                </div>
+
+                <div class="comment public">
+                    <div class="comment-meta">
+                        <span class="comment-author">a***@***.com</span>
+                        <span class="role role-admin">Admin</span>
+                        <span class="comment-time">· 1 day ago</span>
+                    </div>
+                    <div class="comment-text">Great point! We'll consider OLED variants in our implementation. Thanks for the feedback!</div>
+                </div>
+
+                <div class="comment internal">
+                    <div class="comment-meta">
+                        <span class="comment-author">a***@***.com</span>
+                        <span class="role role-internal">Internal</span>
+                        <span class="comment-time">· 1 day ago</span>
+                    </div>
+                    <div class="comment-text">Engineering says 2 weeks if we prioritize. Let's discuss in standup tomorrow.</div>
+                </div>
+
+                <div class="comment-form-box">
+                    <textarea placeholder="Add a comment or internal note..."></textarea>
+                    <label class="internal-toggle">
+                        <input type="checkbox">
+                        Internal note (only visible to admins)
+                    </label>
+                    <button class="btn btn-sm" style="margin-top: 0.75rem;">Post Comment</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

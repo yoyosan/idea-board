@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaBoard Admin — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .stat-count {
+            font-size: 1.875rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.025em;
+        }
+        .stat-label {
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .stat-submitted .stat-count { color: var(--submitted); }
+        .stat-review .stat-count { color: var(--review); }
+        .stat-planned .stat-count { color: var(--planned); }
+        .stat-progress .stat-count { color: var(--progress); }
+        .stat-completed .stat-count { color: var(--completed); }
+
+        .filters {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .search { flex: 1; min-width: 200px; }
+        .filter {
+            padding: 0.625rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            background: var(--surface);
+            color: var(--text);
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            padding-right: 2.25rem;
+        }
+        .filter:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); }
+
+        .idea-list {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .idea-row {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .idea-row:hover { background: var(--surface-hover); }
+        .idea-row:last-child { border-bottom: none; }
+        .row-votes {
+            width: 50px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text);
+            text-align: center;
+        }
+        .row-title-wrap { flex: 1; }
+        .row-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        .row-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.825rem;
+            margin-top: 0.125rem;
+        }
+        .row-status { width: 130px; }
+        .row-category { width: 150px; }
+        .row-category .category-badge { font-size: 0.7rem; }
+
+        @media (max-width: 768px) {
+            .stats { grid-template-columns: repeat(3, 1fr); }
+            .row-category { display: none; }
+        }
+        @media (max-width: 640px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .row-votes { width: 40px; font-size: 1rem; }
+            .row-status { width: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="dashboard.html" class="logo">
+                <span class="logo-icon">💡</span>
+                <span class="logo-text">Idea<span>Board</span></span>
+                <span style="background: var(--primary-light); color: var(--primary); padding: 0.125rem 0.5rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 700; margin-left: 0.25rem;">ADMIN</span>
+            </a>
+            <a href="#" class="back-link" style="margin: 0;">Logout</a>
+        </div>
+    </header>
+
+    <main class="container container-wide">
+        <div class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Review, prioritize, and update customer feature requests.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card stat-submitted">
+                <div class="stat-count">12</div>
+                <div class="stat-label">Submitted</div>
+            </div>
+            <div class="stat-card stat-review">
+                <div class="stat-count">5</div>
+                <div class="stat-label">Under Review</div>
+            </div>
+            <div class="stat-card stat-planned">
+                <div class="stat-count">3</div>
+                <div class="stat-label">Planned</div>
+            </div>
+            <div class="stat-card stat-progress">
+                <div class="stat-count">2</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-card stat-completed">
+                <div class="stat-count">1</div>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="text" class="search" placeholder="🔍 Search ideas...">
+            <select class="filter">
+                <option>All Statuses</option>
+                <option>Submitted</option>
+                <option>Under Review</option>
+                <option>Planned</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+            </select>
+            <select class="filter">
+                <option>All Categories</option>
+                <option>Feature Request</option>
+                <option>Improvement</option>
+                <option>New Capability</option>
+                <option>Integration Request</option>
+            </select>
+            <select class="filter">
+                <option>Most Requested</option>
+                <option>Recent</option>
+            </select>
+        </div>
+
+        <div class="idea-list">
+            <div class="idea-row" onclick="location.href='admin-detail.html'">
+                <div class="row-votes">47</div>
+                <div class="row-title-wrap">
+                    <div class="row-title">Dark mode support</div>
+                    <div class="row-subtitle">j***@***.com · 2 days ago</div>
+                </div>
+                <div class="row-status"><span class="status status-submitted">Submitted</span></div>
+                <div class="row-category"><span class="category-badge">Feature Request</span></div>
+            </div>
+            <div class="idea-row" onclick="location.href='admin-detail.html'">
+                <div class="row-votes">32</div>
+                <div class="row-title-wrap">
+                    <div class="row-title">Export to PDF</div>
+                    <div class="row-subtitle">m***@***.com · 1 week ago</div>
+                </div>
+                <div class="row-status"><span class="status status-review">Under Review</span></div>
+                <div class="row-category"><span class="category-badge">Improvement</span></div>
+            </div>
+            <div class="idea-row" onclick="location.href='admin-detail.html'">
+                <div class="row-votes">28</div>
+                <div class="row-title-wrap">
+                    <div class="row-title">Slack integration</div>
+                    <div class="row-subtitle">k***@***.com · 3 days ago</div>
+                </div>
+                <div class="row-status"><span class="status status-planned">Planned</span></div>
+                <div class="row-category"><span class="category-badge">Integration Request</span></div>
+            </div>
+            <div class="idea-row" onclick="location.href='admin-detail.html'">
+                <div class="row-votes">19</div>
+                <div class="row-title-wrap">
+                    <div class="row-title">Bulk upload CSV</div>
+                    <div class="row-subtitle">r***@***.com · 5 days ago</div>
+                </div>
+                <div class="row-status"><span class="status status-submitted">Submitted</span></div>
+                <div class="row-category"><span class="category-badge">New Capability</span></div>
+            </div>
+            <div class="idea-row" onclick="location.href='admin-detail.html'">
+                <div class="row-votes">12</div>
+                <div class="row-title-wrap">
+                    <div class="row-title">Mobile app</div>
+                    <div class="row-subtitle">t***@***.com · 1 week ago</div>
+                </div>
+                <div class="row-status"><span class="status status-progress">In Progress</span></div>
+                <div class="row-category"><span class="category-badge">Feature Request</span></div>
+            </div>
+            <div class="idea-row" onclick="location.href='admin-detail.html'">
+                <div class="row-votes">8</div>
+                <div class="row-title-wrap">
+                    <div class="row-title">API documentation</div>
+                    <div class="row-subtitle">d***@***.com · 2 weeks ago</div>
+                </div>
+                <div class="row-status"><span class="status status-completed">Completed</span></div>
+                <div class="row-category"><span class="category-badge">Improvement</span></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

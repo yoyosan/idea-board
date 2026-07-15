@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaBoard — Feature Requests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .filters {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .search { flex: 1; min-width: 200px; }
+        .filter {
+            padding: 0.625rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            background: var(--surface);
+            color: var(--text);
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            padding-right: 2.25rem;
+        }
+        .filter:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); }
+
+        .idea-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 0.75rem;
+            align-items: flex-start;
+        }
+        .idea-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-subtle);
+        }
+        .idea-content { flex: 1; min-width: 0; }
+        .idea-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+        .idea-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .idea-meta {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .date { color: var(--text-muted); font-size: 0.825rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="ideas.html" class="logo">
+                <span class="logo-icon">💡</span>
+                <span class="logo-text">Idea<span>Board</span></span>
+            </a>
+            <a href="submit.html" class="btn btn-sm">✏️ Submit Idea</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="page-title">Feature Requests</h1>
+            <p class="page-subtitle">Browse ideas from our community. Upvote the ones you'd like to see built.</p>
+        </div>
+
+        <div class="filters">
+            <input type="text" class="search" placeholder="🔍 Search ideas...">
+            <select class="filter">
+                <option>All Statuses</option>
+                <option>Submitted</option>
+                <option>Under Review</option>
+                <option>Planned</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+            </select>
+            <select class="filter">
+                <option>All Categories</option>
+                <option>Feature Request</option>
+                <option>Improvement</option>
+                <option>New Capability</option>
+                <option>Integration Request</option>
+            </select>
+        </div>
+
+        <div class="idea-card" onclick="location.href='idea-detail.html'">
+            <button class="vote-btn voted" onclick="event.stopPropagation()">
+                <span class="vote-arrow">▲</span>
+                <span class="vote-count">47</span>
+            </button>
+            <div class="idea-content">
+                <div class="idea-title">Dark mode support</div>
+                <div class="idea-desc">I'd love to see a dark mode option for the app. It's easier on the eyes at night and looks more modern.</div>
+                <div class="idea-meta">
+                    <span class="status status-submitted">Submitted</span>
+                    <span class="category-badge">Feature Request</span>
+                    <span class="date">2 days ago</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="idea-card" onclick="location.href='idea-detail.html'">
+            <button class="vote-btn" onclick="event.stopPropagation()">
+                <span class="vote-arrow">▲</span>
+                <span class="vote-count">32</span>
+            </button>
+            <div class="idea-content">
+                <div class="idea-title">Export to PDF</div>
+                <div class="idea-desc">Allow exporting reports and dashboards directly to PDF format for easy sharing with stakeholders.</div>
+                <div class="idea-meta">
+                    <span class="status status-review">Under Review</span>
+                    <span class="category-badge">Improvement</span>
+                    <span class="date">1 week ago</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="idea-card" onclick="location.href='idea-detail.html'">
+            <button class="vote-btn" onclick="event.stopPropagation()">
+                <span class="vote-arrow">▲</span>
+                <span class="vote-count">28</span>
+            </button>
+            <div class="idea-content">
+                <div class="idea-title">Slack integration</div>
+                <div class="idea-desc">Send notifications to Slack channels when new data is available or alerts are triggered.</div>
+                <div class="idea-meta">
+                    <span class="status status-planned">Planned</span>
+                    <span class="category-badge">Integration Request</span>
+                    <span class="date">3 days ago</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="idea-card" onclick="location.href='idea-detail.html'">
+            <button class="vote-btn" onclick="event.stopPropagation()">
+                <span class="vote-arrow">▲</span>
+                <span class="vote-count">19</span>
+            </button>
+            <div class="idea-content">
+                <div class="idea-title">Bulk upload CSV</div>
+                <div class="idea-desc">Ability to import data in bulk via CSV upload to save time when onboarding new clients.</div>
+                <div class="idea-meta">
+                    <span class="status status-submitted">Submitted</span>
+                    <span class="category-badge">New Capability</span>
+                    <span class="date">5 days ago</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="idea-card" onclick="location.href='idea-detail.html'">
+            <button class="vote-btn" onclick="event.stopPropagation()">
+                <span class="vote-arrow">▲</span>
+                <span class="vote-count">12</span>
+            </button>
+            <div class="idea-content">
+                <div class="idea-title">Mobile app</div>
+                <div class="idea-desc">A native mobile app for iOS and Android to access the platform on the go.</div>
+                <div class="idea-meta">
+                    <span class="status status-progress">In Progress</span>
+                    <span class="category-badge">Feature Request</span>
+                    <span class="date">1 week ago</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

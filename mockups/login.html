@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaBoard — Log In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="ideas.html" class="logo">
+                <span class="logo-icon">💡</span>
+                <span class="logo-text">Idea<span>Board</span></span>
+            </a>
+            <a href="register.html" class="btn btn-ghost btn-sm">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="container container-narrow">
+        <div class="page-header" style="margin-bottom: 1.5rem;">
+            <h1 class="page-title">Welcome back</h1>
+            <p class="page-subtitle">Log in to submit ideas, vote, and comment.</p>
+        </div>
+
+        <div class="card">
+            <form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                        <label>Password</label>
+                        <a href="forgot-password.html" style="font-size: 0.85rem; color: var(--primary); text-decoration: none;">Forgot?</a>
+                    </div>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-lg">Log In</button>
+            </form>
+        </div>
+
+        <p class="footer-text">Don't have an account? <a href="register.html">Sign up →</a></p>
+    </main>
+</body>
+</html>
