@@ -50,6 +50,8 @@ Two roles: `customer` (submit, vote, comment) and `admin` (dashboard, status upd
 
 ## Live Mockups
 
+**Note:** These are interactive mockups demonstrating the planned UI and user flow. They are **not the final implemented product** — just a preview of what will be built using the specs in this repository.
+
 Interactive HTML mockups deployed via GitHub Pages:
 
 | Page | Description |
