@@ -52,7 +52,7 @@ Two roles: `customer` (submit, vote, comment) and `admin` (dashboard, status upd
 
 | Document | What it covers |
 |----------|---------------|
-| `agents.md` | Coding standards, philosophy, verification sequence |
+| `AGENTS.md` | Coding standards, philosophy, verification sequence |
 | `openspec/changes/customer-idea-management-system/proposal.md` | Why, scope, out-of-scope list |
 | `openspec/changes/customer-idea-management-system/design.md` | Architecture, schema, security, ops |
 | `openspec/changes/customer-idea-management-system/specs/` | Detailed requirements per capability |

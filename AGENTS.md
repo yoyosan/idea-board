@@ -1,4 +1,4 @@
-# agents.md
+# AGENTS.md
 
 Guide for AI agents working on this project. Read this before making changes.
 
